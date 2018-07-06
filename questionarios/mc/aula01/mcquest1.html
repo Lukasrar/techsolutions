@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<script>
+    function armazenarRespostas() {
+        questoesMarcadas = 0
+        nroQuestoes =5;
+      for (nroQ=1; nroQ<(nroQuestoes+1); nroQ++) {
+        questao = document.getElementsByName("questao"+nroQ)  
+        for (i=0; i<questao.length; i++) {
+          if (questao[i].checked == true) {
+              questoesMarcadas++;
+            localStorage.setItem("questao"+nroQ,+(i+1));
+            break
+          }
+        }  
+      }
+        if (questoesMarcadas == 5)
+      window.open("corrigirQuestoes.html","_self")
+        else
+            alert ("Marque todas questões para avançar!")
+    }
+  </script>
+
+	<link rel="stylesheet" type="text/css" href="../../../index.css">
+	<meta charset="utf-8">
+	<title>TechSolutions</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header>
+		<a href="../../../index.html"><img class="logo" src="../../../logo.png"></a>
+		<input type="checkbox" id="bt_menu">
+		<label for="bt_menu">&#9776;</label>
+		<nav>
+			<ul>
+				<li><a href="../../../faleConosco.html">Fale Conosco</a></li>
+				<li><a href="../../../quemSomos.html">Quem Somos</a></li>
+				<li><a href="../../../opinioes.html">Opiniões</a></li>
+				<li><a href="../../../index.html">Cursos</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<div class="header-section metodologia">
+			<p class="titulo" style="color: black;">Metodologia Científica</p> <p class="subTitulo" style="color: black;" > Questionário I</p>
+			<div class="sectionCursos"><img src="../../../img/MC.png" class="img-quest"></div>
+		</div>
+		<article>
+			<div class="cursos-container-principal">
+				<div class="col-dm-12 col-12 col-dg-12 container-alinhamento ">
+					<div class="cursos-container col-12">
+						<h2>Pesquisa Exploratória </h2><br>
+			            <p>Com base na vídeo aula e no material de apoio, você irá responder abaixo nosso questionário de Metodologia Científica referente a pesquisa exploratória.
+			            </p>
+					</div>
+					<div class="linha">
+                   <div class="col-dm-3 col-3 col-dg-3"></div>
+                    <div class="col-dm-6 col-6 col-dg-6 metodologia header-section"> <form>
+         <p>Questão 1: Assinale abaixo apenas as questões que são corretas:</p>
+        <label><input type="radio" name="questao1"> Na pesquisa exploratória criamos hipóteses. </label><br>
+        <label><input type="radio" name="questao1"> Para fazer uma pesquisa exploratória pode se usar apenas jornais. </label><br>
+        <label><input type="radio" name="questao1"> Na pesquisa exploratória apenas entrevistamos pessoas. </label><br>
+        <label><input type="radio" name="questao1"> Pesquisa exploratória é uma ferramenta apenas para engenheiros. </label><br>
+        <br>
+
+
+        <p>Questão 2: Assinale abaixo apenas as questões que são corretas:</p>
+        <label><input type="radio" name="questao2"> Na pesquisa exploratória usarmos apenas internet como fonte de dados. </label><br>
+        <label><input type="radio" name="questao2"> Na pesquisa exploratória fazemos um aprimoramento de idéias. </label><br>
+        <label><input type="radio" name="questao2"> A internet não ajuda na pesquisa exploratória . </label><br>
+        <label><input type="radio" name="questao2"> Artigos atrapalham a pesquisa exploratória. </label><br>
+        <br>
+        <p>Questão 3: Assinale abaixo apenas as questões que são corretas:</p>
+        <label><input type="radio" name="questao3"> Levantamento de dados é um aspecto da pesquisa exploratória .  </label><br>
+        <label><input type="radio" name="questao3"> Levantamento de dados não é um aspecto da pesquisa exploratória.  </label><br>
+        <label><input type="radio" name="questao3"> A pesquisa exploratória tem como base a nutrição.   </label><br>
+        <label><input type="radio" name="questao3"> Na pesquisa exploratória apenas analisamos dados referente a informática.  </label><br>
+
+        <br>
+        <p>Questão 4: Assinale abaixo apenas as questões que são corretas:</p>
+        <label><input type="radio" name="questao4"> Entrevistas podem ser usadas em uma pesquisa exploratória.  </label><br>
+        <label><input type="radio" name="questao4"> Pesquisas não podem ser usadas em uma pesquisa exploratória.  </label><br>
+        <label><input type="radio" name="questao4"> Nunca se pode usar artigos em uma pesquisa.  </label><br>
+        <label><input type="radio" name="questao4"> Opiniões de pessoas não são validas na pesquisa exploratória. </label><br>
+
+        <br>
+        <p>Questão 5: Assinale abaixo apenas as questões que são corretas:</p>
+        <label><input type="radio" name="questao5"> Pesquisa exploratória é voltada apenas para estudantes da área de informática.  </label><br>
+        <label><input type="radio" name="questao5"> Livros atrapalham uma pesquisa exploratória.   </label><br>
+        <label><input type="radio" name="questao5"> Não podemos usar levantamentos bibliográfico  em uma pesquisa exploratória.  </label><br>
+        <label><input type="radio" name="questao5"> Podemos usar levantamentos bibliográficos em uma pesquisa exploratória.  </label><br>
+        <br>
+
+
+        <input class="botao" type="button" value="Conferir" onclick="armazenarRespostas()">
+        <input class="botao" type="button" value="Limpar">
+    </form>
+        
+                        </div>
+                        <div class="col-dm-3 col-3 col-dg-3"></div>
+ </div>
+                </div>
+            </div>
+		</article>
+	</section>
+	<footer>
+		<div class=" container-principal-footer">
+				<div class="container-footer">
+					<p class="footer-titulo">Desenvolvedores</p>
+					<div class="container-footer-sub">
+						<span><a href="mailto:lukasrar@hotmail.com?subject=Contato TechSolutions"><img src="../../../fotoPerfil/lukas.png" class="foto"></a><p class="">Lukas Rodrigo</p></span>
+                        <span><a href="mailto:marcoantoniozxcv@gmail.com?subject=Contato TechSolutions"><img src="../../../fotoPerfil/marco.jpeg" class="foto"></a><p class="">Marco Antonio</p></span>
+                        <span><a href="mailto:iurematheus11@gmail.com?subject=Contato TechSolutions"><img src="../../../fotoPerfil/iure.jpg" class="foto"></a><p class="">Iure Matheus </p></span>
+					</div>
+				</div>
+				<div class="container-footer">
+					<p class="footer-titulo">Cursos</p>
+					<div class="container-footer-sub">
+						<p><a href="../../../cursos/logica.html">-Lógica de Programação</a></p>
+						<p><a href="../../../cursos/ingles.html">-Inglês Instrumental</a></p>
+						<p><a href="../../../cursos/html.html">-Fundamentos de Web Design</a></p>
+						<p><a href="../../../cursos/arquitetura.html">-Arquitetura e O. de Computadores</a></p>
+						<p><a href="../../../cursos/MC.html">-Metodologia Científica</a></p>
+						<p><a href="../../../cursos/SO.html">-Sistemas Operacionais</a></p>
+					</div>
+				</div>
+				<div class="container-footer">
+					<p class="footer-titulo">Contato</p>
+					<div class="container-footer-sub">
+	                    <span><a href="https://www.google.com.br/maps/place/IFTM+Campus+Uberl%C3%A2ndia+Centro/@-18.9328567,-48.2822785,17z/data=!3m1!4b1!4m5!3m4!1s0x94a444e28f2d7a11:0x8fa16020966235f9!8m2!3d-18.9328567!4d-48.2800898" target="_blank"><img class="iconesFooter" src="../../../img/email-1.png"><p class="footer-texto">Google Maps</p></a></span>
+	                    <span><a href="mailto:iurelukesmarco@gmail.com?subject=SweetWords"><img class="iconesFooter" src="../../../img/maps-1.png"><p class="footer-texto">E-mail</p></a></span>
+	                    <span><a href="https://www.youtube.com/channel/UC7JtRktoaKnrBZKQQ5bvRwQ?" target="_blank"><img class="iconesFooter" src="../../../img/youtube-1.png"><p class="footer-texto">YouTube</p></a></span>
+	                </div>
+				</div>
+				<div class="container-footer">
+					<p class="footer-titulo"><span>Sobre o Projeto</span></p>
+					<p class="footer-texto">O projeto Tech Solutions nasceu com a participação de alunos do curso Sistemas para Internet-IFTM. O projeto tem o objetivo de disponibilizar conteúdo educacional sobre tecnologias em um portal simples porém funcional.</p>
+				</div>
+		</div>
+	</footer>
+</body>
+</html>
